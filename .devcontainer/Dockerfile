@@ -1,4 +1,7 @@
-FROM mcr.microsoft.com/devcontainers/php:0-7.4
+FROM mcr.microsoft.com/devcontainers/php:8.2
+
+#
+# curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 
 # Install MariaDB client
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
