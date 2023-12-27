@@ -7,17 +7,13 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
-    depends_on:
-      - web
-      - db
-      - phpmyadmin
     volumes:
       - ../..:/workspaces:cached
     command: sleep infinity
+    network_mode: service:db
 
   web:
     image: yeasy/simple-web:latest
-    command: sleep infinity
     ports:
       - 8081:80
 
