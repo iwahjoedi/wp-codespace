@@ -3,13 +3,13 @@ REPO_FOLDER="/workspaces/$RepositoryName"
 SERVERNAME="$CODESPACE_NAME-80.$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN"
 
 # Apache
-sudo cp error.log /tmp/error.log
-sudo cp acess.log /tmp/access.log
+sudo cp .devcontainer/error.log /tmp/error.log
+sudo cp .devcontainer/access.log /tmp/access.log
 sudo chmod 777 /etc/apache2/sites-available/000-default.conf
 sudo sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-default.conf > /etc/apache2/sites-available/000-default.conf
 sudo sed -i -r "s@.*ServerName.*@\tServerName $SERVERNAME@" /etc/apache2/sites-available/000-default.conf
-update-rc.d apache2 defaults 
-service apache2 start
+sudo update-rc.d apache2 defaults 
+sudo service apache2 start
 
 LOCALE="en_US"
 
