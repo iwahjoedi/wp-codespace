@@ -12,11 +12,6 @@ services:
     command: sleep infinity
     network_mode: service:db
 
-  web:
-    image: yeasy/simple-web:latest
-    ports:
-      - 8081:80
-
   db:
     image: mariadb:10.4
     restart: unless-stopped
