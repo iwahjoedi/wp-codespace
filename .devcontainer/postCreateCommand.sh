@@ -8,6 +8,7 @@ sudo touch /tmp/access.log
 sudo chmod 777 /etc/apache2/sites-available/000-default.conf
 sudo sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-default.conf > /etc/apache2/sites-available/000-default.conf
 sudo sed -i -r "s@.*ServerName.*@\tServerName $SERVERNAME@" /etc/apache2/sites-available/000-default.conf
+sudo sed -i -r "s@.*ServerAlias.*@\tServerAlias $GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN@" /etc/apache2/sites-available/000-default.conf
 update-rc.d apache2 defaults 
 service apache2 start
 
