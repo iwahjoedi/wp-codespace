@@ -1,8 +1,8 @@
 version: '3.8'
 
-services: 
+services:
   app:
-#    image: tomrosert/wp-codespace:latest
+    #    image: tomrosert/wp-codespace:latest
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,6 +10,12 @@ services:
     volumes:
       - ../..:/workspaces:cached
     command: sleep infinity
+
+  web:
+    image: yeasy/simple-web:latest
+    command: sleep infinity
+    ports:
+      - 8081:80
 
   db:
     image: mariadb:10.4
@@ -21,7 +27,7 @@ services:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
-      
+
   phpmyadmin:
     image: phpmyadmin
     depends_on:
