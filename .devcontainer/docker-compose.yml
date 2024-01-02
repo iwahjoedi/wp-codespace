@@ -9,6 +9,8 @@ services:
     restart: unless-stopped
     volumes:
       - ../..:/workspaces:cached
+    ports:
+      - 80:80
     command: sleep infinity
     network_mode: service:db
 
