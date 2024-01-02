@@ -1,6 +1,6 @@
 #! /bin/bash
 REPO_FOLDER="/workspaces/$RepositoryName"
-SERVERNAME="$CODESPACE_NAME-80.$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN"
+SERVERNAME="$CODESPACE_NAME-8080.$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN"
 
 # Apache
 sudo cp .devcontainer/error.log /tmp/error.log
