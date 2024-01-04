@@ -10,9 +10,6 @@ services:
     volumes:
       - ../..:/workspaces:cached
     command: sleep infinity
-    network_mode: 
-    - service:db
-    - service:phpmyadmin
 
   db:
     image: mariadb:10.4
