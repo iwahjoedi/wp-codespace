@@ -26,4 +26,4 @@ RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/
 RUN yes | npx playwright install-deps  
 RUN npx playwright install 
 
-EXPOSE 80
+#EXPOSE 80

@@ -9,10 +9,10 @@ services:
     restart: unless-stopped
     volumes:
       - ../..:/workspaces:cached
-    ports:
-      - 80:80
     command: sleep infinity
-    network_mode: service:db
+    network_mode: 
+    - service:db
+    - service:phpmyadmin
 
   db:
     image: mariadb:10.4
