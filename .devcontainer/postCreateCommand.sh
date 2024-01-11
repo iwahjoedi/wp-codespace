@@ -3,8 +3,8 @@ REPO_FOLDER="/workspaces/$RepositoryName"
 SERVERNAME="$CODESPACE_NAME-8080.$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN"
 
 # Apache
-sudo cp .devcontainer/error.log /tmp/error.log
-sudo cp .devcontainer/access.log /tmp/access.log
+sudo cp .devcontainer/error.log /tmp/apache_error.log
+sudo cp .devcontainer/access.log /tmp/apache_access.log
 sudo chmod 777 /etc/apache2/sites-available/000-default.conf
 sudo sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-default.conf > /etc/apache2/sites-available/000-default.conf
 sudo sed -i -r "s@.*ServerName.*@\tServerName $SERVERNAME@" /etc/apache2/sites-available/000-default.conf
@@ -43,7 +43,7 @@ composer install
 
 # Setup local plugin
 cd $REPO_FOLDER/wordpress/wp-content/plugins/wp-codespace && npm install && npx playwright install && npm run compile:css
-code -r wp-codespace.php
+# code -r wp-codespace.php
 
 # Setup bash
 echo export PATH=\"\$PATH:$REPO_FOLDER/vendor/bin:$REPO_FOLDER/node_modules/.bin/\" >> ~/.bashrc
