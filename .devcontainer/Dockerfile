@@ -1,4 +1,5 @@
 FROM mcr.microsoft.com/devcontainers/php:8-bullseye
+#FROM php:8.2.5-apache-bullseye
 #FROM mcr.microsoft.com/devcontainers/php:8-buster
 
 #
