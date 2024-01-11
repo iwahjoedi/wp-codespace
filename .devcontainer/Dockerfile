@@ -1,4 +1,5 @@
-FROM mcr.microsoft.com/devcontainers/php:8.2
+# FROM mcr.microsoft.com/devcontainers/php:8.2
+FROM mcr.microsoft.com/devcontainers/php:8-buster
 
 #
 # curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
