@@ -12,7 +12,7 @@ sudo sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-d
 sudo sed -i -r "s@.*ServerName.*@\tServerName $SERVERNAME@" /etc/apache2/sites-available/000-default.conf
 sudo update-rc.d apache2 defaults 
 #sudo service apache2 start
-sudo a2dismod ssl
+#sudo a2dismod ssl
 sudo a2ensite 000-default
 
 sudo apache2ctl start

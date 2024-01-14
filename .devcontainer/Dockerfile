@@ -4,6 +4,7 @@ FROM mcr.microsoft.com/devcontainers/php:8-bullseye
 
 #
 # curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+RUN a2dismod ssl
 
 # Install MariaDB client
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
