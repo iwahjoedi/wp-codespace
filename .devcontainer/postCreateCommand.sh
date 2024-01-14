@@ -15,9 +15,15 @@ sudo update-rc.d apache2 defaults
 #sudo a2dismod ssl
 sudo a2ensite 000-default
 
-#sudo apache2ctl start
+sudo apache2ctl start
 
 LOCALE="en_US"
+
+# NVM
+chmod +x /home/vscode/.nvm/nvm.sh
+#nvm install 19
+yes | npx playwright install-deps  
+npx playwright install 
 
 # WordPress Core install
 wp core download --locale=$LOCALE --path=wordpress
@@ -49,6 +55,7 @@ composer install
 # Setup local plugin
 cd $REPO_FOLDER/wordpress/wp-content/plugins/wp-codespace && npm install && npx playwright install && npm run compile:css
 # code -r wp-codespace.php
+
 
 # Setup bash
 echo export PATH=\"\$PATH:$REPO_FOLDER/vendor/bin:$REPO_FOLDER/node_modules/.bin/\" >> ~/.bashrc
