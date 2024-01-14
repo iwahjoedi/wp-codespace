@@ -15,7 +15,7 @@ sudo update-rc.d apache2 defaults
 #sudo a2dismod ssl
 sudo a2ensite 000-default
 
-sudo apache2ctl start
+#sudo apache2ctl start
 
 LOCALE="en_US"
 
