@@ -4,6 +4,12 @@ FROM mcr.microsoft.com/devcontainers/php:8-bullseye
 
 #
 # curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+# ReInstall Apache2
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get install -y apache2 \
+    && apt-get install -y php libapache2-mod-php php-mysql \ 
+    && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+
 RUN a2dismod ssl
 
 # Install MariaDB client
