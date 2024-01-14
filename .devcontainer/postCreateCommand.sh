@@ -6,7 +6,7 @@ SERVERNAME="$CODESPACE_NAME-9090.$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN"
 sudo a2dissite 000-default
 sudo cp .devcontainer/error.log /tmp/apache_error.log
 sudo cp .devcontainer/access.log /tmp/apache_access.log
-sudo cp .devcontainer/ports.conf /etc/apache2/ports.conf
+#sudo cp .devcontainer/ports.conf /etc/apache2/ports.conf
 sudo chmod 777 /etc/apache2/sites-available/000-default.conf
 sudo sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-default.conf > /etc/apache2/sites-available/000-default.conf
 sudo sed -i -r "s@.*ServerName.*@\tServerName $SERVERNAME@" /etc/apache2/sites-available/000-default.conf
