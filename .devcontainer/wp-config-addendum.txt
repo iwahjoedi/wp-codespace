@@ -1,4 +1,4 @@
-define( 'WP_SITEURL', 'https://CODESPACE_NAME-8080.app.github.dev/' );
-define( 'WP_HOME', 'https://CODESPACE_NAME-8080.app.github.dev/' );
+define( 'WP_SITEURL', 'https://CODESPACE_NAME-9090.app.github.dev/' );
+define( 'WP_HOME', 'https://CODESPACE_NAME-9090.app.github.dev/' );
 define( 'FS_METHOD', 'direct' );
 $_SERVER['HTTPS'] = 'on';
